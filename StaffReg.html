@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>Document</title>
+</head>
+
+<body class="Forgot">
+    <div class="side">
+        <h1 class="head"><img style="height: 36px;" src="download.jpeg" alt=""> <b>ABC Institute Of Technology </b></h1>
+    </div>
+    <h1 id="pass">Create A New Account</h1><br><br>
+    <div id="Dina">
+        <form id="registrationForm">
+            <h3 id="verify"> 
+                <label for="username">Create Staff Id&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+                <input type="text" id="username" required>
+            </h3>
+            <h3 id="verify">
+                <label for="password">Create Password&nbsp;:</label>
+                <input type="password" id="password" required>
+            </h3>
+            <h3 id="verify">
+                <label for="confirmPassword">Re-enter the Password&nbsp;:</label>
+                <input type="password" id="confirmPassword" required>
+            </h3>
+            <h3 id="email">
+                <label for="emailId">Email Id&nbsp;:</label>
+                <input type="email" id="emailId" required>
+            </h3>
+            <p id="Gmail"> *The six digit Code will be sent to your registered email*</p>
+            <h3 id="Code">
+                <label for="verificationCode">Enter the Code&nbsp;:</label>
+                <input type="text" id="verificationCode" required>
+            </h3><br>
+            <input type="submit" value="Register" id="btn">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>Document</title>
+    <style>
+        /* Added CSS for button styling */
+        button {
+            background-color: yellow;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body class="Back">
+    <div class="side">
+        <span>
+            <h1 style="padding-left: 220px;" class="head"><img style="height:45px;" src="download.jpeg" alt=""> ABC Institute Of Technology <a style="padding-left: 200px;" href="index.html"><img style="height: 25px;margin-top: 28px;" src="Image/home.png" alt=""></a></h1>
+        </span>
+    </div>
+    <h1 id="Second"> Admin Login</h1>
+    <div id="box">
+
+        <p> Admin Id &nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" id="username"></p>
+        <p> Password &nbsp;&nbsp;&nbsp;: <input type="password" id="password"></p>
+        <br>
+        <button onclick="validateForm()">Sign in</button>
+
+        <a href="AdminReg.html"> <p>Don't have an Account? Register</p></a>
+    </div>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if ((username === "abcd" && password === "123") ||
+                (username === "xyz" && password === "123") ||
+                (username === "abcde" && password === "123")) {
+                window.location.href = ""; // Add the destination URL here
+            } else {
+                alert("Invalid username or password");
+            }
+        }
+    </script>
+</body>
+
+</html>

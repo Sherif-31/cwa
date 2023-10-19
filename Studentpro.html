@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  background-color: blanchedalmond;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: black;
+  position: fixed;
+  height: 100vh;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: white;
+  color: black;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+.container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        h4{
+          color: gray;
+        }
+        h3{
+          color: gray;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group a{
+          width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+       a:hover {
+            background-color: #0056b3;
+        }
+        img{
+          width: 100px;
+          height: 100px;
+          border-radius: 50px;
+          align-items: center;
+        }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <a class="active" href="#home"> Profile</a>
+  <a href="">Attendance</a>
+  <a href="StuCour.html">Course</a>
+  <a href="Sudmark.html">Mark</a>
+  <a href="fees.html">Fees</a>
+  <a href="index.html">Home</a>
+</div>
+
+<div class="content">
+    <div class="container">
+        <h2>User Profile</h2>
+        <form action="save_profile.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <img src="4bba32f083a3b6d6365536358990de45.jpg">
+                <h3>Mohamed Sherif H</h5>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+               <h4>20</h5>
+            </div>
+            <div class="form-group">
+                <label for="qualifications">Qualifications:</label>
+                <h4>B.Tech in Computer Science and Buisness System</h5>
+            </div>
+            <div class="form-group">
+              <label for="address">Address:</label>
+              <h4>185 Thiruvalluvar Nagar</h5>
+          </div>
+            <div class="form-group">
+                <a href="Changename.html">Edit</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+</div>
+
+</body>
+</html>

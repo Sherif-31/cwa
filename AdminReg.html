@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>Document</title>
+</head>
+<body class="Forgot">
+    <div class="side">
+        <h1 style="padding-left: 220px;" class="head"><img style="height:45px;" src="download.jpeg" alt=""> ABC Institute Of Technology <a style="padding-left: 200px;" href="index.html"><img style="height: 25px;margin-top: 28px;" src="Image/home.png" alt=""></a></h1>
+
+        <h1 id="pass">Create A New Account</h1><br><br>
+        <div id="Dina"> 
+            <form id="registrationForm">
+                <h3 id="verify"> Create Admin Id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:  <input type="text" id="username"> </h3>
+                <h3 id="verify"> Create Password  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<input type="password" id="password"> </h3>
+                <h3 id="verify"> Re-enter the Password  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<input type="password" id="confirmPassword"> </h3>
+                <h3 id="email">  Email Id &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <input type="email" id="emailId"></h3>
+                <p id="Gmail"> *The six digit Code will be sent to your register email*</p>
+                <h3 id="Code"> Enter the Code&nbsp;  : <input type="text" id="verificationCode"></h3><br>
+                <button type="submit" id="btn">Register</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Marking System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      
+    }
+
+    #attendance-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-right: 250px;
+      
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      
+    }
+
+    th, td {
+      padding-left: 200px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 200px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    input[type="checkbox"] {
+      cursor: pointer;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 300px;
+      margin-top: 20px;
+      
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+    
+  </style>
+</head>
+<body>
+
+<div id="attendance-container">
+    <h1>Grade Managment</h1>
+  <forms>
+    <input type ="search" placeholder="Student Name">
+  </forms>
+  <table>
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody id="attendance-list">
+      <!-- Student data will be added here dynamically -->
+    </tbody>
+  </table>
+  <button onclick="submitAttendance()">Submit Grade</button>
+</div>
+
+<script>
+  // Sample student data
+  const students = [
+    { id: 1, name: 'Course 1' },
+    { id: 2, name: 'Course 2' },
+    { id: 3, name: 'Course 3' },
+    { id: 3, name: 'Course 4' },
+    { id: 3, name: 'Course 5' },
+    { id: 3, name: 'Course 6' },
+    
+    // Add more students as needed
+  ];
+
+  // Function to dynamically generate the table rows
+  function generateTableRows() {
+    const tableBody = document.getElementById('attendance-list');
+
+    students.forEach(student => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${student.name}</td>
+        <td><input type="fill" id="student${student.id}"></td>
+      `;
+      tableBody.appendChild(row);
+    });
+  }
+
+  // Function to submit attendance
+  function submitAttendance() {
+    const attendanceData = [];
+
+    students.forEach(student => {
+      const checkbox = document.getElementById(`student${student.id}`);
+      const attendanceStatus = focus.checked ;
+      attendanceData.push({ id: student.id, name: student.name, status: attendanceStatus });
+    });
+
+    // Displaying the attendance data (you can send it to the server here)
+    alert(JSON.stringify(attendanceData));
+  }
+
+  // Call the function to generate table rows on page load
+  generateTableRows();
+</script>
+
+</body>
+</html>

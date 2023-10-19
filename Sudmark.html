@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grades</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 40px;
+            background-color: lightcyan;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: lightslategray;
+        }
+        body{
+            padding-left: 350px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+<h1 style="padding-left: 20px;">Mark</h1>
+<h2 style="padding-left: 20px;">Periodic Test 1</h2>
+
+<table id="gradesTable">
+    <tr>
+        <th style="text-align: center;">Student</th>
+        <th style="text-align: center;">Grade</th>
+    </tr>
+</table>
+
+<script>
+    // Sample data of 5 students and their grades
+    const studentData = [
+        { name: 'course 1', grade: 88 },
+        { name: 'course 2', grade: 92 },
+        { name: 'course 3', grade: 78 },
+        { name: 'course 4', grade: 95 },
+        { name: 'course 5', grade: 88 }
+    ];
+
+    // Function to create and populate the table
+    function populateTable() {
+        const table = document.getElementById('gradesTable');
+
+        // Loop through the student data and create table rows
+        studentData.forEach(student => {
+            const row = table.insertRow();
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+
+            cell1.textContent = student.name;
+            cell2.textContent = student.grade;
+        });
+    }
+
+    // Call the function to populate the table
+    populateTable();
+</script>
+
+</body>
+</html>

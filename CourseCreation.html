@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        button {
+            margin: 5px;
+        }
+        
+        #courseForm input {
+            margin: 5px;
+        }
+        
+    </style>
+    <h1>Course Management System</h1>
+
+    <button id="addCourse">Add Course</button>
+
+    <div id="courseList">
+        <!-- Course List will be displayed here -->
+    </div>
+
+    <div id="courseForm" style="display:none;">
+        <h2>Add New Course</h2>
+        <input type="text" id="courseName" placeholder="Course Name">
+        <button id="saveCourse">Save</button>
+        <button id="cancel">Cancel</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addCourseButton = document.getElementById('addCourse');
+            const courseList = document.getElementById('courseList');
+            const courseForm = document.getElementById('courseForm');
+            const courseNameInput = document.getElementById('courseName');
+            const saveCourseButton = document.getElementById('saveCourse');
+            const cancelButton = document.getElementById('cancel');
+        
+            let courses = [];
+        
+            function renderCourseList() {
+                courseList.innerHTML = '';
+                courses.forEach(function(course, index) {
+                    const listItem = document.createElement('div');
+                    listItem.innerHTML = `<h3>${course}</h3><button class="delete" data-index="${index}">Delete</button>`;
+                    courseList.appendChild(listItem);
+                });
+            }
+        
+            function showCourseForm() {
+                courseForm.style.display = 'block';
+                courseNameInput.value = '';
+            }
+        
+            function hideCourseForm() {
+                courseForm.style.display = 'none';
+            }
+        
+            function addCourse() {
+                const courseName = courseNameInput.value;
+                if (courseName.trim() !== '') {
+                    courses.push(courseName);
+                    renderCourseList();
+                    hideCourseForm();
+                }
+            }
+        
+            function deleteCourse(index) {
+                courses.splice(index, 1);
+                renderCourseList();
+            }
+        
+            addCourseButton.addEventListener('click', showCourseForm);
+            saveCourseButton.addEventListener('click', addCourse);
+            cancelButton.addEventListener('click', hideCourseForm);
+        
+            courseList.addEventListener('click', function(event) {
+                if (event.target.classList.contains('delete')) {
+                    const index = event.target.dataset.index;
+                    deleteCourse(index);
+                }
+            });
+        });
+        
+    </script>
+</body>
+</html>

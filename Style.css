@@ -1,0 +1,72 @@
+.Front{
+    background-color:whitesmoke;
+    margin-top: 26px;
+}
+.Back{
+    background-color: bisque;
+    background-image: -webkit-image-set(-webkit-image-set);
+}
+.First
+{
+    color:  yellowgreen;
+    text-align: center;
+}
+.para
+{
+    text-align: center;
+    border: 1px solid black;
+    margin-left: 400px;
+    margin-right: 400px;
+    background-color: rgb(156, 235, 247);
+    
+
+    
+    
+}
+.head{
+    color: black;
+    font-size: 50px;
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+    text-align: center;
+
+}
+#Second{
+    color: blue;
+    text-align: center;
+}
+#box
+{
+    text-align: center;
+    border: 1px solid black;
+    margin-left: 400px;
+    margin-right: 400px;
+    background-color: whitesmoke;
+}
+.Forgot
+{
+    background-color: whitesmoke;
+    text-align: center;
+}
+#pass
+{
+    text-align: center;
+}
+#verify
+{
+    text-align: center;
+
+}
+#Dina
+{
+    border: 1px solid black;
+    margin-left: 32%;
+    background-color: skyblue;
+    width: 450px;
+    border-radius: 20px;
+    
+}
+#btn{
+    margin-bottom: 20px;
+}
+
